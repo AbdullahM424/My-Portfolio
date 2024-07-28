@@ -1,0 +1,39 @@
+.animated {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    background-color: #2C3E50;
+    font-family: "Rubik", sans-serif;
+}
+
+h1,h2,h4,h5,h6 {
+    color: #ECF0F1;
+}
+
+p {
+    color: #A9CCE3;
+}
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+    background-color: #34495E;
+    color: #ECF0F1;
+    border: 2px solid #34495E; 
+
+}
+
+a {
+    text-decoration: none;
+  }
+  
+  
+
