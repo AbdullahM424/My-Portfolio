@@ -3,426 +3,606 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdullah Almeshhen</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
+  <title>Abdullah Almeshhen — Full-Stack Web Developer</title>
+  <meta name="description" content="Abdullah Almeshhen — Full-stack web developer and Senior Software Engineering student at KFUPM, working across web development, backend systems, and cybersecurity operations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
-  <!-- Introduction -->
-  <section class="introduction animated">
-    <div class="container col-xxl-8 px-4">
-      <div class="row flex-lg-row-reverse align-items-center g-5">
-        <div class="col-10 col-sm-8 col-lg-6">
-          <img src="./images/Profile Image.png" class="profile-image d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="350" height="350" loading="lazy">
+
+  <!-- Depth gauge -->
+  <div class="depth-gauge" aria-hidden="true">
+    <div class="depth-gauge-bubbles" id="depth-gauge-bubbles"></div>
+    <div class="depth-gauge-housing">
+      <div class="depth-gauge-face">
+        <svg viewBox="0 0 100 100" class="depth-gauge-svg">
+          <path class="depth-gauge-warn" d="M 93.4 32.0 A 47 47 0 0 1 83.2 83.2" fill="none" stroke-width="3" stroke-linecap="round"/>
+          <g class="depth-ticks-major" stroke-width="1.6" stroke-linecap="round">
+            <line x1="18.9" y1="81.1" x2="23.1" y2="76.9"/>
+            <line x1="9.4" y1="33.2" x2="14.9" y2="35.5"/>
+            <line x1="50" y1="6" x2="50" y2="12"/>
+            <line x1="90.7" y1="33.2" x2="85.1" y2="35.5"/>
+            <line x1="81.1" y1="81.1" x2="76.9" y2="76.9"/>
+          </g>
+          <g class="depth-ticks-minor" stroke-width="1" stroke-linecap="round">
+            <line x1="6.9" y1="58.6" x2="9.8" y2="58.0"/>
+            <line x1="25.6" y1="13.4" x2="27.2" y2="15.9"/>
+            <line x1="74.5" y1="13.4" x2="72.8" y2="15.9"/>
+            <line x1="93.2" y1="58.6" x2="90.2" y2="58.0"/>
+          </g>
+          <text x="28.8" y="71.2" class="depth-tick-label">0</text>
+          <text x="22.3" y="38.5" class="depth-tick-label">10</text>
+          <text x="50" y="20" class="depth-tick-label">20</text>
+          <text x="77.7" y="38.5" class="depth-tick-label">30</text>
+          <text x="71.2" y="71.2" class="depth-tick-label">40</text>
+          <text x="50" y="55" class="depth-gauge-brand">DEPTH</text>
+          <rect x="36" y="58" width="28" height="15" rx="2" class="depth-window"/>
+          <text x="50" y="65.5" class="depth-window-value"><tspan id="depth-readout-num">0</tspan><tspan class="depth-window-unit"> m</tspan></text>
+          <line id="depth-needle-tail" class="depth-needle-tail" x1="50" y1="50" x2="45.7" y2="56.9"/>
+          <line id="depth-needle" class="depth-needle" x1="50" y1="50" x2="18.9" y2="81.1"/>
+          <circle cx="50" cy="50" r="3.4" class="depth-hub"/>
+        </svg>
+      </div>
+    </div>
+    <div class="depth-gauge-stem"></div>
+    <p class="depth-label">Surface</p>
+  </div>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <div class="wrap">
+      <a href="#top" class="brand">
+        <span class="brand-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2 20 5.2V11C20 16.2 16.6 20 12 21.5 7.4 20 4 16.2 4 11V5.2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            <line x1="8" y1="5.4" x2="16" y2="5.4" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
+            <rect x="7.3" y="8.4" width="9.4" height="5" rx="2.5" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M9.3 10 Q10.4 9.1 11.6 9.7" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.6"/>
+          </svg>
+        </span>
+        Abdullah Almeshhen
+      </a>
+      <ul class="nav-links">
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#domains">Focus</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <canvas id="network-bg"></canvas>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Full-Stack Web Development &amp; Security</span>
+        <h1>Abdullah</h1>
+        <h2>Full-stack web developer building down from the browser to the backend and the network layer that protects it.</h2>
+        <p class="animated">
+          Abdullah starts from the front end, builds the APIs and databases behind it, then thinks about how that
+          system holds up under real security scrutiny. Senior Software Engineering student at KFUPM, currently
+          leading a web team and shipping production sites and internal tools.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-accent">View Projects</a>
+          <a href="./Abdullah Almeshhen Resume.pdf" class="btn btn-outline" target="_blank">Resume</a>
+          <a href="#contact" class="btn btn-outline">Contact</a>
         </div>
-        <div class="col-lg-6">
-          <h1 class="display-5 fw-bold lh-1 mb-3">Abdullah Almeshhen</h1>
-          <h4 class="display-7 fw-bold lh-1 mb-3">Full Stack Web Developer & <br> Senior SWE Student</h4>
-          <p class="lead">Aspiring full stack web developer focused on crafting engaging, user-friendly, and accessible digital experiences. 
-            Eager to learn and grow in creating high-quality websites.</p>
+        <div class="hero-meta">
+          <span class="pill">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1c-2.6 0-4.7 2.1-4.7 4.7 0 3.5 4.7 8.3 4.7 8.3s4.7-4.8 4.7-8.3C12.7 3.1 10.6 1 8 1Zm0 6.6a1.9 1.9 0 1 1 0-3.8 1.9 1.9 0 0 1 0 3.8Z" fill="currentColor"/></svg>
+            Dammam, Saudi Arabia
+          </span>
+          <span class="pill">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2 1 5.5 8 9l6.2-3.1V9h1V5.5L8 2Zm-4.5 5.1V10c0 1.4 2 2.6 4.5 2.6s4.5-1.2 4.5-2.6V7.1L8 10 3.5 7.1Z" fill="currentColor"/></svg>
+            Software Engineering, KFUPM
+          </span>
+          <span class="pill">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 6.5c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0M1 10c1 1 2 1 3 0s2-1 3 0 2 1 3 0 2-1 3 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="2.6" r="1.1" fill="currentColor"/></svg>
+            Scuba Diver
+          </span>
+        </div>
+      </div>
+
+      <aside class="identity-card animated">
+        <div class="identity-card-top">
+          <span class="eyebrow">Signal</span>
+          <span class="pill status">Open to work</span>
+        </div>
+        <h5>Abdullah Almeshhen</h5>
+        <p>Full-stack developer working across React/Node systems and cybersecurity operations, headed toward
+          full-stack and security-conscious engineering roles.</p>
+        <div>
+          <span class="pill">Web Dev</span>
+          <span class="pill">Security</span>
+          <span class="pill">Leadership</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats" style="padding-top:0; padding-bottom:0;">
+    <div class="wrap">
+      <div>
+        <p class="stat-num" data-count="4">0</p>
+        <p class="stat-label">Engineering domains</p>
+      </div>
+      <div>
+        <p class="stat-num" data-count="20" data-suffix="+">0</p>
+        <p class="stat-label">Skills mapped</p>
+      </div>
+      <div>
+        <p class="stat-num" data-count="10" data-suffix="+">0</p>
+        <p class="stat-label">Roles held</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile / About -->
+  <section class="about" id="profile">
+    <div class="wrap">
+      <div class="section-head animated">
+        <span class="eyebrow">Profile</span>
+        <h2>From curious about the screen to building what runs behind it.</h2>
+      </div>
+      <p class="animated" style="max-width:760px; font-size:1.02rem;">
+        22-year-old full-stack web developer and Senior Software Engineering student at KFUPM. Toward the end of
+        high school I got curious about how websites actually work — what's behind the screen. At university that
+        curiosity turned into learning to code, and in November 2023 I committed to it properly by joining a web
+        development bootcamp. Since then my focus has been building modern, flexible websites that hold up in
+        production — and, more recently, understanding the security layer that protects them. When I'm not at the
+        computer I'm scuba diving, at the gym, reading, watching series, or with friends.
+      </p>
+    </div>
+  </section>
+
+  <!-- Domains -->
+  <section class="domains" id="domains">
+    <div class="wrap">
+      <div class="section-head animated">
+        <span class="eyebrow">Technical Focus</span>
+        <h2>Where the work actually sits.</h2>
+      </div>
+      <div class="domain-grid">
+        <div class="domain-card animated">
+          <span class="eyebrow">Web Dev</span>
+          <h3>Full-Stack Web Development</h3>
+          <p>Building server-side apps and the APIs and databases behind them, from Webflow marketing sites to
+            React/Node applications.</p>
+          <div class="tag-row">
+            <span class="tag">JavaScript</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js / Express.js</span>
+            <span class="tag">Nest.js</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">RESTful API</span>
+          </div>
+        </div>
+
+        <div class="domain-card animated">
+          <span class="eyebrow">Security</span>
+          <h3>Cybersecurity Operations</h3>
+          <p>Managing firewalls, VPNs, and IDS/IPS day to day, and verifying the controls that stop the common
+            attacks from ever landing.</p>
+          <div class="tag-row">
+            <span class="tag">Firewall &amp; VPN</span>
+            <span class="tag">AWAF / OWASP Top 10</span>
+            <span class="tag">SPF, DKIM, DMARC</span>
+            <span class="tag">SOC Tickets</span>
+            <span class="tag">Phishing Analysis</span>
+          </div>
+        </div>
+
+        <div class="domain-card animated">
+          <span class="eyebrow">Practice</span>
+          <h3>Software Engineering Practice</h3>
+          <p>Designing, developing, and deploying software with attention to architecture and agile team
+            workflows, not just getting a feature to run once.</p>
+          <div class="tag-row">
+            <span class="tag">Software Architecture</span>
+            <span class="tag">Object-Oriented Design</span>
+            <span class="tag">Agile Development</span>
+            <span class="tag">Scalable Solutions</span>
+          </div>
+        </div>
+
+        <div class="domain-card animated">
+          <span class="eyebrow">People</span>
+          <h3>Leadership &amp; Collaboration</h3>
+          <p>Leading a web team, coordinating timelines across teammates and stakeholders, and keeping delivery on
+            schedule without losing quality.</p>
+          <div class="tag-row">
+            <span class="tag">Team Leadership</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Teamwork</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- About me -->
-  <section class="about animated">
-    <div class="mb-5">
-      <div class="px-5 pt-5 text-center">
-        <div class="container py-5">
-          <h2 class="pb-3">About</h2>
-          <p class="col-lg-8 mx-auto lead">
-            22 year old full stack web developer and Senior Software Engineering Student at KFUPM. End of my journey in high school I was impressed
-            with how the websites work and had curiosity about what is behind the screen. At university, I started learning how to code and 
-            I am attracted to web development. <br> Since November 2023 finally I decided to start learning web development by joining a Bootcamp. 
-            My main focus is to improve our community with modern and flexible websites. <br> <br> When I'm not around my computer I go to the gym, read books,
-            Watching series, and hanging out with friends.
+  <!-- Experience -->
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-head animated">
+        <span class="eyebrow">Dive Log</span>
+        <h2>Experience, role by role.</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- GSR 2.0 -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">May 2025 — Present</p>
+          <h3>Website Team Leader · GSR <a href="https://gsr.kfupm.org/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Part-time</p>
+          <div class="tag-row">
+            <span class="tag">Web Development</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Team Collaboration</span>
+          </div>
+        </div>
+
+        <!-- solutions by stc -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">June 2025 — August 2025</p>
+          <h3>Cybersecurity Operations Engineer · solutions by stc <a href="https://solutions.com.sa/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Internship</p>
+          <p class="desc">
+            Managed daily security operations including firewalls, VPNs, and IDS/IPS systems. Implemented AWAF
+            rules to block OWASP Top 10 threats, verified email security using SPF, DKIM, and DMARC, and
+            troubleshot antivirus and load balancer configurations. Handled SOC tickets and coordinated with teams
+            to ensure swift incident resolution and a strong security posture.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiencs -->
-  <section class="experiences animated">
-    <div class="mb-5">
-      <div class="px-5 pt-5 text-center">
-        <div class="container py-5">
-          <h2 class="pb-3">Experience</h2>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- GSR 2.0 -->
-      <div class="row animated">
-        <div class="col">
-          <p>May 2025 - Present</p>
+          <div class="tag-row">
+            <span class="tag">Firewall</span>
+            <span class="tag">Load Balancer</span>
+            <span class="tag">AWAF</span>
+            <span class="tag">Anti-virus</span>
+            <span class="tag">Email Security Protocol</span>
+            <span class="tag">Phishing Analysis</span>
+            <span class="tag">Team Collaboration</span>
+          </div>
         </div>
 
-        <div class="col mb-3">
-          <h5>Website Team Leader · GSR <a href="https://gsr.kfupm.org/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Part-time</h5>
-          <p class="m-0">
-
+        <!-- Bosala -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">July 2024 — August 2025</p>
+          <h3>Backend Web Developer · Bosala | بوصلة <a href="https://www.linkedin.com/company/bosalah-%D8%A8%D9%88%D8%B5%D9%84%D8%A9/posts/?feedView=all" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Part-time</p>
+          <p class="desc">
+            Designed server-side apps, developed APIs, optimized performance, and ensured security while
+            collaborating on user-focused solutions.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Web Development</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Leadership</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Time Management</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Team Collaboration</span>
-        </div>
-      </div>
-
-      <!-- solutions by stc -->
-      <div class="row animated">
-        <div class="col">
-          <p>June 2025 - August 2025</p>
+          <div class="tag-row">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Database</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">RESTful API</span>
+            <span class="tag">Collaboration</span>
+          </div>
         </div>
 
-        <div class="col mb-3">
-          <h5>Cybersecurity Operations Engineer · solutions by stc <a href="https://solutions.com.sa/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Internship</h5>
-          <p class="m-0">
-            As a Cybersecurity Operations Engineer, I manage daily security operations including firewalls, VPNs, and IDS/IPS systems.
-             I implement AWAF rules to block OWASP Top 10 threats, verify email security using SPF, DKIM, and DMARC, 
-             and troubleshoot antivirus and load balancer configurations. 
-            I also handle SOC tickets and coordinate with teams to ensure swift incident resolution and strong security posture.
+        <!-- KFUPM KIKX -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">July 2024 — August 2025</p>
+          <h3>Web Developer · KFUPM KIKX <a href="https://events.kfupm.edu.sa/category/85/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Part-time</p>
+          <p class="desc">
+            Developed websites for professional development events such as conferences and seminars, using Webflow
+            templates modified with HTML, CSS, and JavaScript.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Firewall</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Load Balancer</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">AWAF</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Anti-virus</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Email Security Protocol</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Analyzing Phishing Email</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Team Collaboration</span>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Webflow</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Communication</span>
+          </div>
         </div>
-      </div>
-
-      <!-- Bosala | بوصلة -->
-      <div class="row animated">
-        <div class="col">
-          <p>July 2024 - August 2025</p>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Backend Web Developer · Bosala | بوصلة <a href="https://www.linkedin.com/company/bosalah-%D8%A8%D9%88%D8%B5%D9%84%D8%A9/posts/?feedView=all" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Part-time</h5>
-          <p class="m-0">
-            As a Backend Web Developer at Bosala, I design server-side apps, develop APIs, 
-            optimize performance, and ensure security while collaborating on user-focused solutions.
-          </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">JavaScript</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Database</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">PostgreSQL</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">RESTful API</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Collaboration</span>
-
-        </div>
-      </div>
-
-      <!-- KFUPM KIKX -->
-      <div class="row animated">
-        <div class="col">
-          <p>July 2024 - August 2025</p>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Web Developer · KFUPM KIKX <a href="https://events.kfupm.edu.sa/category/85/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Part-time</h5>
-          <p class="m-0">
-            Developing a websites for professional development events such as conference and seminar 
-            using Webflow templates which modified by Frontend languages such as HTML, CSS, and JavaScript.
-          </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">HTML</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">CSS</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">JavaScript</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Webflow</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Teamwork</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Communication</span>
-        </div>
-      </div>
 
         <!-- Shafrah -->
-      <div class="row animated">
-        <div class="col">
-          <p>Febuary 2025 - July 2025</p>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Full-Stack Software Engineering · Shafrah <a href="https://shafrah.sa/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Internship</h5>
-          <p class="m-0">
-            I am gaining hands-on experience in designing, developing, and deploying software solutions. 
-            My focus includes software architecture, object-oriented design, agile development, team collaboration, and building scalable solutions.
+        <div class="timeline-item animated">
+          <p class="timeline-date">February 2025 — July 2025</p>
+          <h3>Full-Stack Software Engineering · Shafrah <a href="https://shafrah.sa/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Internship</p>
+          <p class="desc">
+            Gained hands-on experience designing, developing, and deploying software solutions, with a focus on
+            software architecture, object-oriented design, agile development, and building scalable solutions.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Nest.js</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">TypeORM</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">MongoDB</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Agile Development Methodologies</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Team Collaboration</span>
-        </div>
-      </div>
-
-      <!-- KISEF -->
-      <div class="row animated">
-        <div class="col">
-          <p>Febuary 2025 - May 2025</p>
+          <div class="tag-row">
+            <span class="tag">Nest.js</span>
+            <span class="tag">TypeORM</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Agile Development</span>
+            <span class="tag">Team Collaboration</span>
+          </div>
         </div>
 
-        <div class="col mb-3">
-          <h5>Tech Committee Member · KISEF <a href="https://kisef.org/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Part-time</h5>
-          <p class="m-0">
-            We designed and launched the official KISEF website with a strong focus on performance and delivering a seamless user experience during major national events. 
-            As a team, we coordinated development efforts, managed timelines, and ensured the timely rollout of key features. 
-            The website integrated dynamic content, user registration, and live event coverage, all developed in 
-            close collaboration with media teams to enhance real-time engagement and visibility.
+        <!-- KISEF -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">February 2025 — May 2025</p>
+          <h3>Tech Committee Member · KISEF <a href="https://kisef.org/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Part-time</p>
+          <p class="desc">
+            Designed and launched the official KISEF website, coordinating development efforts, managing timelines,
+            and rolling out dynamic content, user registration, and live event coverage in close collaboration with
+            media teams.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Webflow</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Web Design</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Teamwork</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Communication</span>
-        </div>
-      </div>
-
-      <!-- Kreativstorm -->
-      <div class="row animated">
-        <div class="col">
-          <p>October 2024 - November 2024</p>
+          <div class="tag-row">
+            <span class="tag">Webflow</span>
+            <span class="tag">Web Design</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Communication</span>
+          </div>
         </div>
 
-        <div class="col mb-3">
-          <h5>Software Engineering Trainee · Kreativstorm <a href="https://www.kreativstorm.de/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Training Program</h5>
-          <p class="m-0">
-            I am gaining hands-on experience in designing, developing, and deploying software solutions. 
-            My focus includes software architecture, object-oriented design, agile development, team collaboration, and building scalable solutions.
+        <!-- Kreativstorm -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">October 2024 — November 2024</p>
+          <h3>Software Engineering Trainee · Kreativstorm <a href="https://www.kreativstorm.de/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Training Program</p>
+          <p class="desc">
+            Gained hands-on experience designing, developing, and deploying software solutions, with focus on
+            software architecture, object-oriented design, and scalable, agile-built systems.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Software Architecture</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Object-Oriented Design</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Agile Development Methodologies</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Team Collaboration</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Scalable Software Solutions</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Software Development and Deployment</span>
-
-        </div>
-      </div>
-
-      <!-- KFUPM Computer Club -->
-      <div class="row animated">
-        <div class="col">
-          <p>Febuary 2024 - August 2024</p>
+          <div class="tag-row">
+            <span class="tag">Software Architecture</span>
+            <span class="tag">Object-Oriented Design</span>
+            <span class="tag">Agile Development</span>
+            <span class="tag">Scalable Solutions</span>
+          </div>
         </div>
 
-        <div class="col mb-3">
-          <h5>Web Developer · KFUPM Computer Club <a href="https://www.linkedin.com/company/kfupmcclub/mycompany/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Part-time</h5>
-          <p class="m-0">
-            Developed and maintained web applications using HTML, CSS, JavaScript, and Tailwind CSS.
+        <!-- KFUPM Computer Club -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">February 2024 — August 2024</p>
+          <h3>Web Developer · KFUPM Computer Club <a href="https://www.linkedin.com/company/kfupmcclub/mycompany/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Part-time</p>
+          <p class="desc">Developed and maintained web applications using HTML, CSS, JavaScript, and Tailwind CSS.</p>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- McKinsey -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">April 2024 — July 2024</p>
+          <h3>Forward Fellow · McKinsey &amp; Company <a href="https://www.mckinsey.com/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Apprenticeship</p>
+          <p class="desc">
+            A global learning initiative for young professionals focused on problem-solving, digital literacy, and
+            interpersonal effectiveness, working on real-world business challenges with McKinsey experts.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">HTML</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">CSS</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Tailwind CSS</span>
+          <div class="tag-row">
+            <span class="tag">Adaptability</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Communication for Impact</span>
+            <span class="tag">Digital Toolkit</span>
+          </div>
         </div>
-      </div>
 
-      <!-- McKinsey & Company -->
-      <div class="row animated">
-        <div class="col">
-          <p>April 2024 - July 2024</p>
-        </div>
-        
-        <div class="col mb-3">
-          <h5>Mckinsey & Company Forward Fellow · McKinsey & Company <a href="https://www.mckinsey.com/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Apprenticeship</h5>
-          <p class="m-0">
-            The McKinsey & Company Forward Program is a global online learning initiative for young professionals. 
-            It focuses on practical skills like problem-solving, digital literacy, and interpersonal effectiveness through self-paced learning and live sessions. 
-            Participants work on real-world business challenges with guidance from McKinsey experts, preparing them for today's job market.
+        <!-- KFUPM YLAB -->
+        <div class="timeline-item animated">
+          <p class="timeline-date">February 2024 — June 2024</p>
+          <h3>KMP Mentee · KFUPM's YLAB <a href="https://www.linkedin.com/company/kfupmylab/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h3>
+          <p class="timeline-role">Internship</p>
+          <p class="desc">
+            A structured mentorship program connecting seasoned KFUPM graduates with less experienced partners to
+            offer guidance and facilitate knowledge exchange.
           </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Adaptability</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Resilience</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Problem Solving</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Communication For Impact</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Relationship</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Well-Being</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Digital Toolkit</span>
-        </div>
-      </div>
-
-      <!-- KFUPM's YLAB -->
-      <div class="row animated">
-        <div class="col">
-          <p>Febuary 2024 - June 2024</p>
-        </div>
-
-        <div class="col mb-3">
-          <h5>KMP Mentee · KFUPM’s YLAB <a href="https://www.linkedin.com/company/kfupmylab/" target="_blank"><img src="./images/link-45deg.svg" alt="link"></a></h5>
-          <h5 class="text-white-50">Internship</h5>
-          <p class="m-0">
-            Mentorship program provided by KFUPM’s YLAB. 
-            It's a structured program designed to connect seasoned individuals who have graduated from KFUPM with less experienced partner, 
-            aiming to offer guidance, support, and facilitate knowledge exchange.
-          </p>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Time Management</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Stress Management</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Networking</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Adaptability</span>
-          <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Flexibility</span>
+          <div class="tag-row">
+            <span class="tag">Time Management</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Adaptability</span>
+            <span class="tag">Flexibility</span>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
+  <!-- Certifications (placeholder) -->
+  <section class="certifications" id="certifications">
+    <div class="wrap">
+      <div class="section-head animated">
+        <span class="eyebrow">Certifications</span>
+        <h2>Credentials, on the way.</h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card animated">
+          <svg class="cert-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 14 7 21l5-2.5L17 21l-1.5-7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <p class="cert-name">Certification name</p>
+          <p class="cert-meta">Issuer · Expected date</p>
+        </div>
+        <div class="cert-card animated">
+          <svg class="cert-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 14 7 21l5-2.5L17 21l-1.5-7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <p class="cert-name">Certification name</p>
+          <p class="cert-meta">Issuer · Expected date</p>
+        </div>
+        <div class="cert-card animated">
+          <svg class="cert-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 14 7 21l5-2.5L17 21l-1.5-7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <p class="cert-name">Certification name</p>
+          <p class="cert-meta">Issuer · Expected date</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Projects -->
-  <section class="projects animated">
-    <div class="mb-5">
-      <div class="px-5 pt-5 text-center">
-        <div class="container py-5">
-          <h2 >Projects</h2>
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="section-head animated">
+        <span class="eyebrow">Project Evidence</span>
+        <h2>Six projects, idea to deploy.</h2>
+      </div>
+
+      <div class="project-grid">
+        <!-- KISEF -->
+        <a href="https://www.kisef.org/" target="_blank" class="project-card animated">
+          <span class="eyebrow">Web Design &amp; Delivery</span>
+          <h3>KISEF <img src="./images/arrow-up-right.svg" alt="arrow"></h3>
+          <p>
+            Contributed to the development and maintenance of the official KISEF website, delivering a platform for
+            competitions, registration, judging criteria, event schedules, news, and resources for students and
+            educators.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Webflow</span>
+            <span class="tag">Web Design</span>
+          </div>
+        </a>
+
+        <!-- KFUPM Kickstart -->
+        <a href="https://github.com/AhmedAlhumaid/SWE363" target="_blank" class="project-card animated">
+          <span class="eyebrow">Full-Stack Development</span>
+          <h3>KFUPM Kickstart <img src="./images/arrow-up-right.svg" alt="arrow"></h3>
+          <p>
+            A university student portal for exploring clubs and organizations, rating instructors, and accessing
+            study materials, with separate normal-user and admin roles.
+          </p>
+          <div class="tag-row">
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </a>
+
+        <!-- Bosala Website -->
+        <div class="project-card animated">
+          <span class="eyebrow">Frontend Development</span>
+          <h3>Bosala Website <span class="pill status" style="margin-left:4px;">Internal</span></h3>
+          <p>
+            A platform serving thousands with volunteering, internship, and competition opportunities. Built with
+            HTML, CSS, and JavaScript, with a responsive design, curated resources, and integrated social links.
+          </p>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
         </div>
+
+        <!-- Number Guesser -->
+        <a href="https://github.com/AbdullahM424/Number-Guesser" target="_blank" class="project-card animated">
+          <span class="eyebrow">Frontend &amp; Logic</span>
+          <h3>Number Guesser <img src="./images/arrow-up-right.svg" alt="arrow"></h3>
+          <p>
+            An interactive number-guessing game with real-time feedback, built around clear game mechanics and
+            problem-solving-driven interaction design.
+          </p>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </a>
+
+        <!-- Moon Hunter -->
+        <a href="https://github.com/AbdullahM424/Moon-Hunter-game" target="_blank" class="project-card animated">
+          <span class="eyebrow">Systems &amp; OOP</span>
+          <h3>Moon Hunter <img src="./images/arrow-up-right.svg" alt="arrow"></h3>
+          <p>
+            Co-developed a reflex-and-accuracy game in JavaFX with dynamic object dropping, increasing difficulty,
+            real-time score tracking, and a top-five high-score system.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Java</span>
+            <span class="tag">JavaFX</span>
+            <span class="tag">OOP</span>
+          </div>
+        </a>
+
+        <!-- TinDog -->
+        <a href="https://github.com/AbdullahM424/TinDog" target="_blank" class="project-card animated">
+          <span class="eyebrow">Frontend Development</span>
+          <h3>TinDog <img src="./images/arrow-up-right.svg" alt="arrow"></h3>
+          <p>
+            A responsive matchmaking-style site for dog adoption, built with HTML and CSS, offering three tailored
+            plans across devices.
+          </p>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </a>
       </div>
     </div>
+  </section>
 
-    <div class="container">
-      <!-- KISEF -->
-      <a href="https://www.kisef.org/" target="_blank">
-        <div class="card w-75 mb-3 animated ">
-          <div class="card-body">
-            <h5 class="card-title">KISEF <img class="ms-1" src="./images/arrow-up-right.svg" alt="arrow"></h5>
-            <p class="card-text">
-              We contributed to the development and maintenance of the official KISEF website, playing a key role in delivering a comprehensive platform that 
-              provides essential information about competitions, registration, judging criteria, event schedules, news, and resources for both students and educators. 
-              Our responsibilities also included supporting the integration of registration forms, announcements, and event schedules to enhance and streamline participant engagement.
-            </p>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Webflow</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Web Design</span>
-          </div>
+  <!-- Narrative -->
+  <section class="narrative">
+    <div class="wrap">
+      <div class="section-head animated">
+        <span class="eyebrow">The Short Version</span>
+        <h2>A straightforward story for recruiters and teams.</h2>
+      </div>
+      <div class="narrative-grid">
+        <div class="narrative-card animated">
+          <p class="narrative-index">01</p>
+          <span class="eyebrow">Foundation</span>
+          <h3>Software Engineering, KFUPM</h3>
+          <p>Started curious about what runs behind a screen, then built that curiosity into a Senior Software
+            Engineering standing through coursework and a web development bootcamp.</p>
         </div>
-      </a>
-
-      <!-- KFUPM Kickstart -->
-      <a href="https://github.com/AhmedAlhumaid/SWE363" target="_blank">
-        <div class="card w-75 mb-3 animated ">
-          <div class="card-body">
-            <h5 class="card-title">KFUPM Kickstart <img class="ms-1" src="./images/arrow-up-right.svg" alt="arrow"></h5>
-            <p class="card-text">
-              The project is a university student portal that allows students to 
-              explore university clubs and view available student organizations, rate instructors to help students make informed decisions,
-              access study materials for academic support, and user roles include normal users and admins, with special access for administrators.
-            </p>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">React.js</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Node.js</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Express.js</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">MongoDB</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Mongoose</span>
-          </div>
+        <div class="narrative-card animated">
+          <p class="narrative-index">02</p>
+          <span class="eyebrow">Practice</span>
+          <h3>Build, secure, ship</h3>
+          <p>Hands-on across full-stack web development and cybersecurity operations — shipping real sites, then
+            learning to defend the systems behind them.</p>
         </div>
-      </a>
-
-
-      <!-- Bosala Website -->
-      <a href="" target="_blank">
-        <div class="card w-75 mb-3 animated ">
-          <div class="card-body">
-            <h5 class="card-title">Bosala Website <img class="ms-1" src="./images/arrow-up-right.svg" alt="arrow"></h5>
-            <p class="card-text">
-              This platform serves thousands by offering opportunities for volunteering, internships, and competitions. Built with HTML, CSS, and JavaScript, 
-              it features a responsive design and seamless navigation. It also provides curated resources, such as certification guides and market insights. 
-              Additionally, users can stay updated through email subscriptions and integrated social media links.
-            </p>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">HTML</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">CSS</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">JavaScript</span>
-          </div>
+        <div class="narrative-card animated">
+          <p class="narrative-index">03</p>
+          <span class="eyebrow">Direction</span>
+          <h3>Full-stack &amp; security-conscious roles</h3>
+          <p>Open to full-stack developer and software engineering roles where shipping product and thinking about
+            security aren't separate concerns.</p>
         </div>
-      </a>
-
-      <a href="https://github.com/AbdullahM424/Number-Guesser" target="_blank">
-        <div class="card w-75 mb-3 animated ">
-          <div class="card-body">
-            <h5 class="card-title">Number Gusser<img class="ms-1" src="./images/arrow-up-right.svg" alt="arrow"></h5>
-            <p class="card-text">
-              Designed an interactive number-guessing game with real-time feedback for an engaging user experience. 
-              Defined game mechanics to ensure seamless functionality and smooth user interaction. 
-              Applied problem-solving and interactive design principles to enhance usability.
-            </p>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">HTML</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">CSS</span>
-            <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">JavaScript</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Moon Hunter -->
-        <a href="https://github.com/AbdullahM424/Moon-Hunter-game" target="_blank">
-          <div class="card w-75 mb-3 animated ">
-            <div class="card-body">
-              <h5 class="card-title">Moon Hunter <img class="ms-1" src="./images/arrow-up-right.svg" alt="arrow"></h5>
-              <p class="card-text">
-                Co-developed **Moon Hunter**, an interactive game built with JavaFX that tests reflexes and accuracy. 
-                Implemented dynamic object dropping with increasing difficulty and real-time score tracking. 
-                Designed a high-score system that displays the top five players at the end of each game.
-              </p>
-              <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">Java</span>
-              <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">JavaFX</span>
-              <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">OOP</span>
-            </div>
-          </div>
-        </a>
-  
-      <!-- TinDog -->
-        <a href="https://github.com/AbdullahM424/TinDog" target="_blank">
-          <div class="card w-75 mb-3 animated">
-            <div class="card-body">
-              <h5 class="card-title">TinDog <img class="ms-1" src="./images/arrow-up-right.svg" alt="arrow"></h5>
-              <p class="card-text">
-                **Tindog** is a website built with HTML and CSS, designed for people looking to find the perfect dog companion. 
-                Inspired by modern matchmaking platforms, it connects users with suitable dogs based on their preferences. 
-                The website features a responsive design, ensuring a seamless experience across different devices. 
-                Additionally, it offers three tailored plans to meet various customer needs, making the adoption process more accessible and convenient.
-              </p>
-              <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">HTML</span>
-              <span class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill">CSS</span>
-
-            </div>
-          </div>
-        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <section class="contact me animated">
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-          <span class="mb-3 mb-md-0 text-light">© 2024-2025 Abdullah Almeshhen</span>
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top animated">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Let's talk about what you're building.</h2>
         </div>
-    
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3"><a  href="https://www.linkedin.com/in/abdullah-almeshhen-63563423b/" target="_blank"><img class="icons" src="./images/linkedin.svg" width="30" height="30 alt="linkedin"></a></li>
-          <li class="ms-3"><a  href=" https://wa.me/+966558838566" target="_blank"><img class="icons" src="./images/whatsapp.svg" width="30" height="30 alt="whatsApp"></a></li>
-          <li class="ms-3"><a  href="https://www.instagram.com/abdullah.m003/" target="_blank"><img class="icons" src="./images/instagram.svg" width="30" height="30 alt="instagram"></a></li>
-          <li class="ms-3"><a  href="https://github.com/AbdullahM424" target="_blank"><img class="icons" src="./images/github.svg" width="30" height="30 alt="github"></a></li>
-          <li class="ms-3"><a  href="mailto:abmeshhen21@gmail.com"><img class="icons" src="./images/mailbox.svg" width="30" height="30 alt="mail"></a></li>
-        </ul>
-      </footer>
-    </div>
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
-  <script src="./index.js"></script>
+        <p class="footer-note">
+          Reach out directly — I check messages across all of these regularly.
+        </p>
+      </div>
 
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024–2026 Abdullah Almeshhen</span>
+        <ul class="social-list">
+          <li><a href="https://www.linkedin.com/in/abdullah-almeshhen-63563423b/" target="_blank" aria-label="LinkedIn"><img src="./images/linkedin.svg" alt=""></a></li>
+          <li><a href="https://wa.me/+966558838566" target="_blank" aria-label="WhatsApp"><img src="./images/whatsapp.svg" alt=""></a></li>
+          <li><a href="https://www.instagram.com/abdullah.m003/" target="_blank" aria-label="Instagram"><img src="./images/instagram.svg" alt=""></a></li>
+          <li><a href="https://github.com/AbdullahM424" target="_blank" aria-label="GitHub"><img src="./images/github.svg" alt=""></a></li>
+          <li><a href="mailto:abmeshhen21@gmail.com" aria-label="Email"><img src="./images/mailbox.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
 </body>
 </html>
-
-
