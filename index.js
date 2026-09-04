@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < count; i++) {
       const span = document.createElement('span');
       span.style.setProperty('--bsize', `${rand(size[0], size[1]).toFixed(1)}px`);
-      span.style.setProperty('--bleft', `${rand(70, 140).toFixed(1)}px`);
+      span.style.setProperty('--bleft', `${rand(33, 67).toFixed(1)}%`);
       span.style.setProperty('--bx', `${rand(drift[0], drift[1]).toFixed(1)}px`);
       span.style.setProperty('--by', `${rand(rise[0], rise[1]).toFixed(1)}px`);
       span.style.animationDelay = `${rand(delay[0], delay[1]).toFixed(2)}s`;

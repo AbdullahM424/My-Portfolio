@@ -335,9 +335,54 @@ a {
   white-space: nowrap;
 }
 
+/* Common laptop screens are short (1366x768, 1280x800, etc.) even though
+   they're plenty wide, so the full 210px gauge can overlap section content
+   right below the hero. Shrink it by viewport height, not just width. */
+@media (max-height: 820px) {
+  .depth-gauge-housing {
+    width: 156px;
+    height: 156px;
+  }
+
+  .depth-gauge-stem {
+    width: 42px;
+    height: 31px;
+    margin-top: -16px;
+  }
+
+  .depth-gauge-face {
+    inset: 12px;
+  }
+
+  .depth-label {
+    margin-top: 8px;
+  }
+}
+
 @media (max-width: 640px) {
   .depth-gauge {
-    display: none;
+    left: 14px;
+    bottom: 16px;
+  }
+
+  .depth-gauge-housing {
+    width: 116px;
+    height: 116px;
+  }
+
+  .depth-gauge-stem {
+    width: 31px;
+    height: 23px;
+    margin-top: -12px;
+  }
+
+  .depth-gauge-face {
+    inset: 9px;
+  }
+
+  .depth-label {
+    margin-top: 6px;
+    font-size: 0.58rem;
   }
 }
 
